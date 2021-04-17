@@ -18,24 +18,26 @@ function App() {
   const getRandomInt = (min, max) => Math.floor(Math.random() *
                                                         (max - min + 1)) + min;
 
+class Organizer {
 
-// const getAsyncSimulate = async data => {
-//   const delay = ms =>
-//     new Promise((res, rej) =>
-//       setTimeout(getRandomInt(1, 5) > 2 ? res : rej, ms)
-//     );
-//   await delay(getRandomInt(500, 2000));
-//
-//   return data;
-// };
-//
+    static async foo() {
+        const data = await axios.get(`https://swapi.dev/api/people/`);
+        data.key = 1;
+        return data;
+    }
+
+    static async bar() {
+        return {foo:1, bar:2}
+    }
+};
+
 
 const getAsyncSimulate = async data => {
   const delay = ms =>
     new Promise((res, rej) =>
       setTimeout(getRandomInt(1, 5) > 2 ? res : rej, ms)
     );
-  await delay(getRandomInt(500, 2000));
+  await delay(getRandomInt(1, 2));
 
   return data;
 };
@@ -45,8 +47,12 @@ const getAsyncSimulate = async data => {
     setLoading(true)
     try{
     const fetchedFilms = await getAsyncSimulate(payload);
-//     const fetchedData = await axios.get(`https://swapi.dev/api/people/1${Number(personNum)}/`);
+
     // ниже должна была быть функция getAsyncSimulate, но что-то пошло не так, редко пользуюсь таймаутами, во время не уложился.
+
+    const x = Organizer.bar()
+    console.log(x)
+
     setLoading(false)
     setFilms(fetchedFilms)
     } catch{
@@ -58,7 +64,6 @@ const getAsyncSimulate = async data => {
   const content = [];
   if (films.titles){
   for (let i=0; i < films.titles.length ; i+=1){
-
     const netProfit = payload.box_office[i] - payload.budget[i];
     const countedColor=(netProfit>0)?'green':'red';
     const card='card';
@@ -77,7 +82,6 @@ const getAsyncSimulate = async data => {
         <h5>Box office:</h5>
         <p>{payload.box_office[i]}</p>
         <h5>Box office:</h5>
-        <p className={countedColor}>{netProfit}</p>
         </div>
       </div>
     )
