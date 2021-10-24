@@ -1,10 +1,9 @@
-import express from 'express';
+import { Router } from 'express';
 
-const router = express.Router();
+const routes = Router();
 
-/* GET users listing. */
-router.get('/', (req, res) => {
+routes.get('/users', (req, res) => {
   res.json({ message: 'Ok' });
 });
 
-export default router;
+export default routes;

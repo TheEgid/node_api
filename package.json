@@ -17,12 +17,15 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "cookie-parser": "~1.4.4",
     "core-js": "^3.18.3",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "eslint-import-resolver-node": "^0.3.6",
     "express": "~4.17.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "regenerator-runtime": "^0.13.7"
+    "morgan": "^1.10.0",
+    "regenerator-runtime": "^0.13.7",
+    "swagger-jsdoc": "^5.0.1",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -38,11 +41,11 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.1",
     "eslint-plugin-react": "^7.26.1",
-    "react": "^17.0.2",
     "nodemon": "^2.0.14",
     "prettier": "^2.4.1",
     "prettier-eslint": "^8.2.2",
-    "prettier-eslint-cli": "^4.2.1"
+    "prettier-eslint-cli": "^4.2.1",
+    "react": "^17.0.2"
   },
   "engines": {
     "node": "14.X"

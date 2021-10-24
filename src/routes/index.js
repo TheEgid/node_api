@@ -1,10 +1,18 @@
-import express from 'express';
+import { Router } from 'express';
 
-const router = express.Router();
+const routes = Router();
 
-/* GET home page. */
-router.get('/', (req, res) => {
+/**
+ * @openapi
+ * /:
+ *   get:
+ *     description: Welcome!
+ *     responses:
+ *       200:
+ *         description: OK
+ */
+routes.get('/', (req, res) => {
   res.json({ message: 'Ok' });
 });
 
-export default router;
+export default routes;
