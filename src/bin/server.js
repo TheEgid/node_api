@@ -1,11 +1,6 @@
 #!/user/bin/env node
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-
-/**
- * Module dependencies.
- */
-
 import http from 'http';
 import app from '../app';
 
@@ -35,10 +30,6 @@ const normalizePort = (val) => {
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
-
 const server = http.createServer(app);
 
 /**
@@ -54,10 +45,12 @@ const onError = (error) => {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
+      // eslint-disable-next-line no-console
       console.error(`${bind} requires elevated privileges`);
       process.exit(1);
       break;
     case 'EADDRINUSE':
+      // eslint-disable-next-line no-console
       console.error(`${bind} is already in use`);
       process.exit(1);
       break;
@@ -72,6 +65,7 @@ const onError = (error) => {
 const onListening = () => {
   const addr = server.address();
   const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
+  // eslint-disable-next-line no-console
   console.log(`Listening on ${bind}`);
 };
 

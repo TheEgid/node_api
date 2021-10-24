@@ -1,0 +1,22 @@
+{
+  "env": {
+    "commonjs": true,
+    "node": true,
+    "es2021": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console": "off",
+    "max-len": [1, 100, { "ignoreUrls": true }],
+    "arrow-parens": 0, // Несовместимо с prettier
+    "linebreak-style": 0,
+    "no-nested-ternary": "error"
+  }
+}
