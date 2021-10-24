@@ -2,7 +2,6 @@ import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import logger from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './swagger';
 
@@ -10,13 +9,13 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 
 const dirname = path.resolve();
+
 const app = express();
 
 // view engine setup
 app.set('views', path.join(dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

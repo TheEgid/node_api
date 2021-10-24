@@ -103,3 +103,11 @@ dist
 # TernJS port file
 .tern-port
 .idea/
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/

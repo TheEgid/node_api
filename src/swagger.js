@@ -1,6 +1,13 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerOptions = {
+  // authAction: {
+  //   JWT: {
+  //     name: 'JWT',
+  //     schema: { type: 'apiKey', in: 'header', name: 'Authorization', description: '' },
+  //     value: 'Bearer <JWT>',
+  //   },
+  // },
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
