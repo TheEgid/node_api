@@ -9,6 +9,7 @@ import indexRouter from './routes/index';
 import usersRouter from './routes/users';
 
 const dirname = path.resolve();
+require('log-node')();
 
 const app = express();
 

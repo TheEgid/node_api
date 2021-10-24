@@ -11,7 +11,9 @@
     "lint": "eslint  **/*.js --color",
     "format": "prettier --write .",
     "fmt": "npm run format && npm run lint",
-    "isready": "npm run format && npm run lint && npm run build"
+    "isready": "npm run format && npm run lint && npm run build",
+    "migrate": "env-cmd -f .env npx sequelize-cli db:migrate",
+    "migrate:reset": "env-cmd -f .env npx sequelize-cli db:migrate:undo:all && npm run migrate"
   },
   "dependencies": {
     "babel-plugin-module-resolver": "^4.1.0",
@@ -25,8 +27,8 @@
     "express": "~4.17.1",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
-    "npmlog": "^5.0.1",
     "pg": "^8.7.1",
+    "log-node": "^8.0.2",
     "pg-hstore": "^2.3.4",
     "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.8.0",
@@ -38,6 +40,7 @@
     "@babel/eslint-parser": "^7.15.8",
     "@babel/node": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
+    "babel-register": "^6.26.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
@@ -51,7 +54,8 @@
     "prettier": "^2.4.1",
     "prettier-eslint": "^8.2.2",
     "prettier-eslint-cli": "^4.2.1",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "sequelize-cli": "^6.2.0"
   },
   "engines": {
     "node": "14.X"

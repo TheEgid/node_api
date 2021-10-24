@@ -1,27 +1,23 @@
 import { Router } from 'express';
-import npmLog from 'npmlog';
-
-const { Sequelize } = require('sequelize');
-
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-  host: 'localhost',
-  dialect: 'postgres',
-  logging: npmLog.info,
-});
-
-async function healthcare() {
-  try {
-    await sequelize.authenticate();
-    npmLog.info('Connection has been established successfully.');
-  } catch (error) {
-    npmLog.info('Unable to connect to the database:', error);
-  }
-}
+// import  logger  from 'sequelize';
+import db from '../database/models';
+// const { Sequelize, DataTypes } = require('sequelize');
 
 const routes = Router();
 
+
+async function healthcare() {
+  try {
+    await db.authenticate();
+    // logger.info('Connection has been established successfully.');
+  } catch (error) {
+    // logger.info('Unable to connect to the database:', error);
+  }
+}
+
+// '/users'
 routes.get('/', async (req, res) => {
-  await healthcare()
+  await healthcare();
   res.json({ message: 'Ok' });
 });
 
