@@ -11,7 +11,7 @@ const routes = Router();
  *       200:
  *         description: OK
  */
-routes.get('/', (req, res) => {
+routes.get('/', async (req, res) => {
   res.json({ message: 'Ok' });
 });
 
